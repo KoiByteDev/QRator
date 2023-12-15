@@ -7,10 +7,15 @@ body {
 }
 
 input {
-  text-align: center;
+  text-align: start;
   width: 80vw;
   height: 45px;
   border: none;
-  border-radius: 50px;
   padding: 0 15px 2px 15px;
+}
+
+.main {
+  background-color: red;
+  height: 90vh;
+  width: full;
 }

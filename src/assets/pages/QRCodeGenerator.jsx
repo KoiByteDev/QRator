@@ -62,7 +62,6 @@ const QRCodeGenerator = () => {
                 </div>
                 <div className='FGColor flex flex-col w-1/2 h-full p-2 text-center'>
                   <p>Foreground Color</p>
-                  <p></p>
                   <FGColor></FGColor>
                 </div>
               </div>

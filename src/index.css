@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+ background: #16193a;
+}
+
+input {
+  text-align: start;
+  width: 80vw;
+  height: 45px;
+  border: none;
+  padding: 0 15px 2px 15px;
+}
+
+.main {
+  background-color: red;
+  height: 90vh;
+  width: full;
+}

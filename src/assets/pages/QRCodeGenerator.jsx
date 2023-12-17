@@ -7,13 +7,11 @@ import SizeSelector from '../components/SizeSelector';
 const QRCodeGenerator = () => {
   const [link, setLink] = useState('https://github.com/KoiByteDev');
   const [size, setSize] = useState(192);
+  const [bgcolor, setBGColor] = useState('white');
+  const [fgcolor, setFGColor] = useState('black')
 
   const handleInputChange = (e) => {
     setLink(e.target.value);
-  };
-
-  const changeSize = (newSize) => {
-    setSize(newSize);
   };
 
   return (
@@ -32,22 +30,24 @@ const QRCodeGenerator = () => {
               <QRCodeSVG 
                 value={link} 
                 size={size} 
+                bgColor={bgcolor}
+                fgColor={fgcolor}
               />
             </div>
             <div className='Editor flex flex-col w-full h-1/2 bg-slate-200'>
               <div className='Size font-bold w-full h-1/3 p-2 bg-slate-300'>
                 <p className='w-full h-2/6 text-center'>Size</p>
-                <SizeSelector changeSize={changeSize}/>
+                <SizeSelector setSize={setSize}/>
               </div>
               <div className='flex flex-row w-full h-2/3'>
                 <div className='BGColor flex flex-col w-1/2 h-full p-2 text-center'>
                   <p>Background Color</p>
-                  <BGColor></BGColor>
+                  <BGColor setBGColor={setBGColor}></BGColor>
                 </div>
                 <div className='FGColor flex flex-col w-1/2 h-full p-2 text-center'>
                   <p>Foreground Color</p>
                   <p></p>
-                  <FGColor></FGColor>
+                  <FGColor setFGColor={setFGColor}></FGColor>
                 </div>
               </div>
             </div>

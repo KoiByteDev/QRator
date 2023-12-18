@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
- background: #16193a;
+ background: #0e0e0e;
 }
 
 input {
@@ -14,6 +14,10 @@ input {
   padding: 0 15px 2px 15px;
 }
 
+.MainContainer {
+  background-color: #29282a;
+}
+
 .main {
   background-color: red;
   height: 90vh;
@@ -22,4 +26,17 @@ input {
 
 .QRCode {
   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.TextInput {
+  outline: none;
+  background-color: rgb(79, 79, 79);
+}
+
+.Editor {
+  background-color: rgb(79, 79, 79);
+}
+
+.Size {
+  background-color: rgb(54, 54, 54);
 }

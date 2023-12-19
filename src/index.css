@@ -4,6 +4,7 @@
 
 body {
  background: #0e0e0e;
+ font-family: 'Montserrat', sans-serif;
 }
 
 input {
@@ -25,16 +26,34 @@ input {
 }
 
 .QRCode {
-  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  box-shadow: 0 0 20px 10px #1e1e1e;
+}
+
+.DownloadButton {
+  box-shadow: 0 0 20px 10px #1e1e1e;
 }
 
 .TextInput {
   outline: none;
   background-color: rgb(79, 79, 79);
+  box-shadow: inset 0 0 20px 10px #404040;
+}
+
+.TextInput::placeholder {
+  color: #0e0e0e;
+}
+
+.material-icons {
+  background-color: rgb(221, 221, 221);
 }
 
 .Editor {
   background-color: rgb(79, 79, 79);
+  box-shadow: 0 0 20px 10px #1e1e1e;
+}
+
+.Color {
+  box-shadow: 0 0 7px 3px #1e1e1e;
 }
 
 .Size {

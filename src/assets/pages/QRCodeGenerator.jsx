@@ -35,14 +35,14 @@ const QRCodeGenerator = () => {
     <div className='w-full h-full flex items-center justify-center'>
       <div className='MainContainer flex flex-row items-center h-5/6 w-5/6 pl-16 p-6 space-x-10'>
         <textarea
-          className='TextInput w-3/6 h-5/6 resize-none text-xl p-2 text-white'
-          placeholder='Paste a link to convert'
+          className='TextInput w-3/6 h-5/6 resize-none text-2xl p-2 text-white'
+          placeholder='Enter your link or text here to convert'
           onChange={handleInputChange}
         />
         <div className='flex flex-col w-3/6 h-full'>
-          <div className='QRCode w-full h-1/2 flex flex-row items-center justify-center space-x-10'>
-            <div className='flex items-center justify-centerw-72 h-72'>
-              <div ref={qrCodeRef}>
+          <div className='w-full h-1/2 flex flex-row items-center justify-center space-x-10'>
+            <div className='flex items-center justify-center w-72 h-72'>
+              <div className='QRCode' ref={qrCodeRef}>
               <QRCodeSVG
                 value={link}
                 size={size}
@@ -52,12 +52,13 @@ const QRCodeGenerator = () => {
               </div>
             </div>
             <button 
-              className='bg-black rounded-lg px-2'
+              className='DownloadButton bg-white rounded-lg pl-3 h-10 flex flex-row items-center space-x-3'
               onClick={handleDownloadClick}
             >
-              <p className='text-white'>
+              <p className='text-black font-bold'>
                 Download Me!
               </p>
+              <i className="material-icons p-2 rounded-r-lg">download</i>
             </button>
           </div>
           <div className='Editor flex flex-col w-full h-1/2'>

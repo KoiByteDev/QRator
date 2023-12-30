@@ -9,7 +9,7 @@
 }
 
 body {
- background: #0e0e0e;
+ background: #000000;
  font-family: 'Montserrat', sans-serif;
 }
 
@@ -43,6 +43,7 @@ input {
 
 .DownloadButton {
   box-shadow: 0 0 20px 10px #1e1e1e;
+  background-color: white;
 }
 
 .TextInput {
@@ -98,3 +99,17 @@ input {
   transform: rotate(-30deg);
 }
 
+.lmMain {
+  background-color: rgb(238, 238, 238);
+}
+.lmSub {
+  background-color: rgb(191, 191, 191);
+}
+
+.lmText {
+  color: black;
+}
+
+.lmShadow {
+  box-shadow: 0 0 7px 3px #9e9e9e;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const SizeSelector = ({ setSize }) => {
+const SizeSelector = ({ setSize, isDarkMode }) => {
   return (
     <div className='flex justify-center space-x-16 h-2/3'>
-      <div className='flex flex-col items-center justify-between h-full text-white'>
+      <div className={`flex flex-col items-center justify-between h-full text-white ${isDarkMode? '' : 'lmText'}`}>
         <button
           className='flex justify-center items-center w-full h-full'
           value='128'
@@ -13,7 +13,7 @@ const SizeSelector = ({ setSize }) => {
         </button>
         <p>Small</p>
       </div>
-      <div className='flex flex-col items-center justify-between h-full text-white'>
+      <div className={`flex flex-col items-center justify-between h-full text-white ${isDarkMode? '' : 'lmText'}`}>
         <button
           className='flex justify-center items-center w-full h-full'
           value='192'
@@ -23,7 +23,7 @@ const SizeSelector = ({ setSize }) => {
         </button>
         <p>Medium</p>
       </div>
-      <div className='flex flex-col items-center justify-between h-full text-white'>
+      <div className={`flex flex-col items-center justify-between h-full text-white ${isDarkMode? '' : 'lmText'}`}>
         <button
           className='flex justify-center items-center w-full h-full'
           value='256'

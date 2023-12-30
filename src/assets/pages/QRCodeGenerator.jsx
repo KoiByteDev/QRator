@@ -35,7 +35,7 @@ const QRCodeGenerator = () => {
     <div className='w-full h-full flex items-center justify-center'>
       <div className='MainContainer flex flex-row items-center h-5/6 w-5/6 pl-16 p-6 space-x-10'>
         <textarea
-          className='TextInput w-3/6 h-5/6 resize-none text-2xl p-2 text-white'
+          className='TextInput w-3/6 h-5/6 resize-none text-xl p-2 text-white'
           placeholder='Enter your link or text here to convert'
           onChange={handleInputChange}
         />

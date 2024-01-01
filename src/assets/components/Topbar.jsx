@@ -14,7 +14,7 @@ const Topbar = ({ isDarkMode, setDarkMode }) => {
       <div className={`w-1/2 h-full flex justify-center items-center text-white text-3xl font-bold ${isDarkMode? '' : 'lmMain lmText'} transition ease-in-out duration-300`}>
         <p>QRator</p>
       </div>
-      <div className={`w-1/2 h-full flex flex-row items-center justify-end space-x-5 pr-40 ${isDarkMode? '' : 'lmMain'} transition ease-in-out duration-300`}>
+      <div className={`w-1/2 h-full flex flex-row items-center justify-center md:justify-end space-x-5 md:pr-40 ${isDarkMode? '' : 'lmMain'} transition ease-in-out duration-300`}>
       <button
         className={`icon w-10 h-10 rounded-lg text-2xl ${isDarkMode? '' : 'lmShadow'}`}
         onClick={() => window.open("https://github.com/KoiByteDev", "_blank")}

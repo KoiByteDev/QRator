@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import BGColor from "../components/BGColor";
 import FGColor from "../components/FGColor";
@@ -10,8 +10,21 @@ const QRCodeGenerator = ({ isDarkMode }) => {
   const [size, setSize] = useState(192);
   const [bgcolor, setBGColor] = useState("white");
   const [fgcolor, setFGColor] = useState("black");
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   
   const qrCodeRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []); 
 
   const handleInputChange = (e) => {
     setLink(e.target.value);
@@ -36,14 +49,14 @@ const QRCodeGenerator = ({ isDarkMode }) => {
 
   return (
     <div className={`w-full h-full flex items-center justify-center ${isDarkMode? '' : 'lmSub'}`}>
-      <div className={`MainContainer flex flex-row items-center h-5/6 w-5/6 pl-16 p-6 space-x-10 ${isDarkMode? '' : 'lmMain lmShadow'}`}>
+      <div className={`MainContainer flex md:flex-row flex-col items-center h-5/6 w-5/6 md:pl-16 p-6 md:space-x-10 ${isDarkMode? '' : 'lmMain lmShadow'}`}>
         <textarea
-          className={`TextInput w-3/6 h-5/6 resize-none text-xl p-2 ${isDarkMode? '' : 'lmSub lmShadow'}`}
+          className={`TextInput md:w-3/6 w-full md:h-5/6 h-1/6 resize-none md:text-xl text-md p-2 ${isDarkMode? '' : 'lmSub lmShadow'}`}
           placeholder="Enter your link or text here to convert"
           onChange={handleInputChange}
         />
-        <div className="flex flex-col w-3/6 h-full">
-          <div className="w-full h-1/2 flex flex-row items-center justify-center space-x-10">
+        <div className="flex flex-col justify-between md:w-3/6 h-full">
+          <div className="w-full pb-10 h-3/5 md:h-1/2 flex md:flex-row flex-col items-center justify-center md:space-x-10">
             <div className="flex items-center justify-center w-72 h-72">
               <div className={`QRCode ${isDarkMode? '' : 'lmShadow'}`} ref={qrCodeRef}>
                 <QRCodeSVG
@@ -62,12 +75,14 @@ const QRCodeGenerator = ({ isDarkMode }) => {
               <i className="material-icons p-2 rounded-r-lg">download</i>
             </button>
           </div>
-          <div className={`Editor flex flex-col w-full h-1/2 ${isDarkMode? '' : 'lmShadow'}`}>
-            <div className={`Size font-bold w-full h-1/3 p-2 ${isDarkMode? '' : 'lmMain'}`}>
-              <p className={`w-full h-2/6 text-center ${isDarkMode? '' : 'lmText'}`}>Size</p>
-              <SizeSelector setSize={setSize} />
-            </div>
-            <div className="flex flex-row w-full h-2/3">
+          <div className={`Editor flex md:flex-col flex-row w-full h-2/5 md:h-1/2 ${isDarkMode? '' : 'lmShadow'}`}>
+            {screenWidth >= 768 &&
+              <div className={`Size font-bold w-full h-1/3 p-2 ${isDarkMode? '' : 'lmMain'}`}>
+                <p className={`w-full h-2/6 text-center ${isDarkMode? '' : 'lmText'}`}>Size</p>
+                <SizeSelector setSize={setSize} />
+              </div>
+            }
+            <div className="flex flex-row w-full md:h-2/3">
               <div className={`BGColor flex flex-col w-1/2 h-full p-2 text-center text-white font-bold ${isDarkMode? '' : 'lmSub lmText'} transition ease-in-out duration-300`}>
                 <p>Background Color</p>
                 <BGColor setBGColor={setBGColor}></BGColor>

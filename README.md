@@ -4,10 +4,6 @@ QRator is a simple QR code generator that allows you to create customized QR cod
 
 ![QRator Screenshot](src/assets/images/screen.jpg)
 
-## Introduction
-
-Brief introduction to your project. Explain its purpose, features, and any other relevant information.
-
 ## Features
 
 - Customization: Personalize your QR codes with a range of color options and size configurations.
